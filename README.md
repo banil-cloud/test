@@ -4,7 +4,7 @@ This repository allows you to create an AWS VPC (Virtual Private Cloud) with a s
 
 To create the VPC, simply click the button below:
 
-[![Create AWS VPC](https://github.com/yourusername/your-repo/workflows/Create%20AWS%20VPC/badge.svg)](https://github.com/yourusername/your-repo/actions/workflows/workflow.yml)
+[![Create AWS VPC](https://github.com/banil-cloud/test/actions/workflows/vpc_workflow.yml/badge.svg)](https://github.com/banil-cloud/test/actions/workflows/vpc_workflow.yml)
 
 ## Prerequisites
 
