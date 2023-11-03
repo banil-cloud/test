@@ -1,0 +1,33 @@
+name: Create AWS VPC
+
+on:
+  workflow_dispatch:
+    inputs:
+      aws-access-key-id:
+        description: 'AWS Access Key ID'
+        required: true
+      aws-secret-access-key:
+        description: 'AWS Secret Access Key'
+        required: true
+      aws-region:
+        description: 'AWS Region'
+        required: true
+  
+jobs:
+  create-vpc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ github.event.inputs.aws-access-key-id }}
+          aws configure set aws_secret_access_key ${{ github.event.inputs.aws-secret-access-key }}
+          aws configure set region ${{ github.event.inputs.aws-region }}
+
+      - name: Create VPC
+        run: |
+          # Use AWS CLI or SDK to create the VPC
+          aws ec2 create-vpc --cidr-block 10.0.0.0/16
